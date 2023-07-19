@@ -61,7 +61,7 @@ public class CategoryServiceImpl implements CategoryService {
                 .orElseThrow(()->
                         new ResourceNotFoundException("Category", "Id", categoryId));
         categoryRepository.deleteById(categoryId);
-        return "Successfully category deleted.";
+        return "Category successfully  deleted.";
     }
 
     private CategoryDTO mapToDto(Category category){

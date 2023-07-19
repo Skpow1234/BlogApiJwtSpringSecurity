@@ -59,7 +59,7 @@ public class CommentServiceImpl implements CommentService {
                         new ResourceNotFoundException("Comment", "id", commentId));
 
         if(!comment.getPost().getId().equals(post.getId())){
-            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to post.");
+            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to this post.");
         }
 
         return mapToDto(comment);
@@ -75,7 +75,7 @@ public class CommentServiceImpl implements CommentService {
                         new ResourceNotFoundException("Comment", "id", commentId));
 
         if(!comment.getPost().getId().equals(post.getId())){
-            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to post.");
+            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to this post.");
         }
         comment.setName(commentDto.getName());
         comment.setEmail(commentDto.getEmail());
@@ -94,7 +94,7 @@ public class CommentServiceImpl implements CommentService {
                         new ResourceNotFoundException("Comment", "id", commentId));
 
         if(!comment.getPost().getId().equals(post.getId())){
-            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to post.");
+            new APIException(HttpStatus.BAD_REQUEST, "This comment not belong to this post.");
         }
         commentRepository.deleteById(comment.getId());
         return "Comment successfully deleted.";

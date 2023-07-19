@@ -117,7 +117,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public String deletePostById(Long postId) {
         postRepository.deleteById(postId);
-        return "Successfully Deleted.";
+        return "Post successfully Deleted.";
     }
 
     @Override
